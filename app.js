@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 const users = require('./routes/users');
 const roles = require('./routes/roles');
 const noticias = require('./routes/noticias');
-const eventos = require('./routes/eventos');
+    const eventos = require('./routes/eventos');
 
 
 var app = express();
@@ -24,6 +24,8 @@ app.get('/api/users', users.getUsers);
 app.get('/api/roles', roles.getRoles);
 app.get('/api/noticias', noticias.getNoticias);
 app.get('/api/eventos', eventos.getEventos);
+
+app.get('/api/users/:id(\\d+)', users.getUserById)
 
 
 
