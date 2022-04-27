@@ -5,10 +5,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
-const users = require('./routes/users');
-const roles = require('./routes/roles');
-const noticias = require('./routes/noticias');
-const eventos = require('./routes/eventos');
+var users = require('./routes/users');
+var roles = require('./routes/roles');
+var noticias = require('./routes/noticias');
+var eventos = require('./routes/eventos');
 
 
 var app = express();
