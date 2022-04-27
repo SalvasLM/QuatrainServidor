@@ -16,8 +16,8 @@ const getUsers = (request, response) => {
   })
 }
 
-const getUserById = (req, res) => {
-  const id = parseInt(req.params.id)
+const getUserById = (request, response) => {
+  const id = parseInt(request.params.id)
 
   client.query('SELECT * FROM users WHERE user_id = $1', [id], (error, results) => {
     if (error) {

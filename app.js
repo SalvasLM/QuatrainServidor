@@ -3,12 +3,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-
 const users = require('./routes/users');
 const roles = require('./routes/roles');
 const noticias = require('./routes/noticias');
-    const eventos = require('./routes/eventos');
+const eventos = require('./routes/eventos');
 
 
 var app = express();
