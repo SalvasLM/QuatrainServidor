@@ -16,6 +16,18 @@ const getRoles = (request, response) => {
     })
 }
 
+const getRoleById = (req, res) => {
+    const id = parseInt(req.params.id)
+
+    client.query('SELECT * FROM roles WHERE role_id = $1', [id], (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 module.exports = {
     getRoles,
+    getRoleById,
 }

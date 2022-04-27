@@ -26,6 +26,9 @@ app.get('/api/noticias', noticias.getNoticias);
 app.get('/api/eventos', eventos.getEventos);
 
 app.get('/api/users/:id(\\d+)', users.getUserById)
+app.get('/api/eventos/:id(\\d+)', eventos.getEventoById)
+app.get('/api/noticias/:id(\\d+)', noticias.getNoticiaById)
+app.get('/api/roles/:id(\\d+)', roles.getRoleById)
 
 
 
