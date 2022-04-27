@@ -23,7 +23,7 @@ const getUserById = (request, response) => {
     if (error) {
       throw error
     }
-    res.status(200).json(results.rows)
+    response.status(200).json(results.rows)
   })
 }
 
