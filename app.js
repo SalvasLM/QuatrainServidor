@@ -7,7 +7,7 @@ var indexRouter = require('./routes/index');
 
 var users = require('./routes/users');
 var roles = require('./routes/roles');
-const noticias = require('./routes/noticias');
+var noticias = require('./routes/noticias');
 var eventos = require('./routes/eventos');
 
 
