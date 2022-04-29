@@ -36,8 +36,6 @@ app.get('/api/eventos/:id(\\d+)', eventos.getEventoById)
 app.get('/api/noticias/:id(\\d+)', noticias.getNoticiaById)
 app.get('/api/roles/:id(\\d+)', roles.getRoleById)
 
-app.post('/api/created', users.createUser)
-
 
 
 
