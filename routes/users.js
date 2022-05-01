@@ -49,10 +49,27 @@ const deleteUser = (request, response) => {
   })
 }
 
+const updateUser = (request, response) => {
+  let user = request.body;
+  let updateQuery = `UPDATE users SET user_name = '${user.name}',
+                                      user_email = '${user.email}',
+                                      user_password = '${user.password}',
+                                      user_role_id = '${user.role_id}',
+                                      user_image = '${user.image}' `
+  client.query(updateQuery, (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+
+}
+
 
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   deleteUser,
+  updateUser,
 }
