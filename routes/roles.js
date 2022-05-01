@@ -1,4 +1,4 @@
-const client = require('C:/unimanager/models/connection')
+const client = require('C:/unimanager/models/connection.js')
 const express = require('express');
 const {log} = require("debug");
 const app = express();

@@ -1,4 +1,4 @@
-const client = require('../models/connection')
+const client = require('../models/connection.js')
 const express = require('express');
 const {log} = require("debug");
 const app = express();
