@@ -29,9 +29,18 @@ const getUserById = (request, response) => {
 
 const createUser = (request, response) => {
   const users = request.body;
-  console.log(users)
   let insertQuery = `insert into users(user_name, user_email, user_password, user_role_id, user_image)
                     values ('${users.name}', '${users.email}', '${users.password}', '${users.role_id}', '${users.image}')`
+  client.query(insertQuery, (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const deleteUser = (request, response) => {
+  let insertQuery = `DELETE from users WHERE user_id = ${request.params.id}`
   client.query(insertQuery, (error, results) => {
     if (error) {
       throw error
@@ -45,4 +54,5 @@ module.exports = {
   getUsers,
   getUserById,
   createUser,
+  deleteUser,
 }
