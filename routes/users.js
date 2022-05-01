@@ -55,7 +55,8 @@ const updateUser = (request, response) => {
                                       user_email = '${user.email}',
                                       user_password = '${user.password}',
                                       user_role_id = '${user.role_id}',
-                                      user_image = '${user.image}' `
+                                      user_image = '${user.image}'
+                                      WHERE user_id = ${user.id} `
   client.query(updateQuery, (error, results) => {
     if (error) {
       throw error
