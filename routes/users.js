@@ -34,7 +34,8 @@ const createUser = (request, response) => {
   client.query(insertQuery, (error, results) => {
     if (error) {
       throw error
-    } else { response.status(200).json(results.rows) }
+    }
+    response.status(200).json(results.rows)
   })
 }
 
