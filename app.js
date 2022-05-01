@@ -38,7 +38,7 @@ app.get('/api/roles/:id(\\d+)', roles.getRoleById);
 
 app.post('/api/users', users.createUser);
 
-app.delete('/api/users/:id(\\d+)', users.deleteUser);
+app.delete('/api/deleteUser/:id(\\d+)', users.deleteUser);
 
 
 
