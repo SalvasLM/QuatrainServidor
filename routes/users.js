@@ -28,9 +28,9 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
-  const user = request.body;
+  const users = request.body;
   let insertQuery = `insert into users(user_name, user_email, user_password, user_role_id) 
-                    values (${user.name}, ${user.email}, ${user.password} ${user.role_id})`
+                    values (${users.name}, ${users.email}, ${users.password} ${users.role_id})`
   client.query(insertQuery, (error, result) => {
     if (error) {
       throw error
