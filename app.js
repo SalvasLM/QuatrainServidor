@@ -40,7 +40,7 @@ app.post('/api/users', users.createUser);
 
 app.delete('/api/users/:id(\\d+)', users.deleteUser);
 
-app.put('/api/users/:id', users.updateUser);
+app.put('/api/users/:id(\\d+)', users.updateUser);
 
 
 
