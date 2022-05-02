@@ -38,8 +38,19 @@ const createEvento = (request, response) => {
         response.status(200).json(results.rows)
     })
 }
+
+const deleteEvento = (request, response) => {
+    let insertQuery = `DELETE from eventos WHERE evento_id = ${request.params.id}`
+    client.query(insertQuery, (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
 module.exports = {
     getEventos,
     getEventoById,
     createEvento,
+    deleteEvento,
 }

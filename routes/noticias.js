@@ -27,7 +27,31 @@ const getNoticiaById = (req, res) => {
     })
 }
 
+const createNoticia = (request, response) => {
+    const noticias = request.body;
+    let insertQuery = `insert into noticias(noticia_titulo, noticia_descricao, noticia_data, noticia_image)
+                    values ('${noticias.titulo}', '${noticias.descricao}', '${noticias.data}', '${noticias.image}')`
+    client.query(insertQuery, (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
+
+const deleteNoticia = (request, response) => {
+    let insertQuery = `DELETE from noticias WHERE noticia_id = ${request.params.id}`
+    client.query(insertQuery, (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
+
 module.exports = {
     getNoticias,
     getNoticiaById,
+    createNoticia,
+    deleteNoticia,
 }
