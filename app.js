@@ -38,8 +38,11 @@ app.get('/api/roles/:id(\\d+)', roles.getRoleById);
 
 app.post('/api/users', users.createUser);
 app.post('/api/eventos', eventos.createEvento);
+app.post('/api/noticias', noticias.createNoticia);
 
 app.delete('/api/users/:id(\\d+)', users.deleteUser);
+app.delete('/api/users/:id(\\d+)', eventos.deleteEvento);
+app.delete('/api/users/:id(\\d+)', noticias.deleteNoticia);
 
 app.put('/api/users/:id(\\d+)', users.updateUser);
 
