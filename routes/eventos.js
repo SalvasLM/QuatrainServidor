@@ -48,9 +48,28 @@ const deleteEvento = (request, response) => {
         response.status(200).json(results.rows)
     })
 }
+
+const updateEvento = (request, response) => {
+    let eventos = request.body;
+    console.log(eventos);
+    let updateQuery = `UPDATE eventos SET evento_titulo = '${eventos.name}',                                  
+                                      evento_descricao = '${eventos.email}',
+                                      evento_data = '${eventos.password}',
+                                      evento_image = '${eventos.role_id}',
+                                      evento_local = '${eventos.image}'
+                                      WHERE evento_id = ${eventos.id} `
+    client.query(updateQuery, (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+
+}
 module.exports = {
     getEventos,
     getEventoById,
     createEvento,
     deleteEvento,
+    updateEvento,
 }

@@ -49,9 +49,27 @@ const deleteNoticia = (request, response) => {
     })
 }
 
+const updateNoticia = (request, response) => {
+    let noticias = request.body;
+    console.log(noticias);
+    let updateQuery = `UPDATE noticias SET noticia_titulo = '${noticias.name}',                                  
+                                      noticia_descricao = '${noticias.email}',
+                                      noticia_data = '${noticias.password}',
+                                      noticia_image = '${noticias.role_id}'
+                                      WHERE noticia_id = ${noticias.id} `
+    client.query(updateQuery, (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+
+}
+
 module.exports = {
     getNoticias,
     getNoticiaById,
     createNoticia,
     deleteNoticia,
+    updateNoticia,
 }

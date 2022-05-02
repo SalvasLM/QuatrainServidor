@@ -44,7 +44,7 @@ app.delete('/api/users/:id(\\d+)', users.deleteUser);
 app.delete('/api/eventos/:id(\\d+)', eventos.deleteEvento);
 app.delete('/api/noticias/:id(\\d+)', noticias.deleteNoticia);
 
-app.put('/api/users/:id(\\d+)', users.updateUser);
+app.put('/api/users', users.updateUser);
 
 
 
