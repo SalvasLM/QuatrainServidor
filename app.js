@@ -37,6 +37,7 @@ app.get('/api/noticias/:id(\\d+)', noticias.getNoticiaById);
 app.get('/api/roles/:id(\\d+)', roles.getRoleById);
 
 app.post('/api/users', users.createUser);
+app.post('/api/eventos', eventos.createEvento);
 
 app.delete('/api/users/:id(\\d+)', users.deleteUser);
 

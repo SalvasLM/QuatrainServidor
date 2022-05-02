@@ -27,7 +27,19 @@ const getEventoById = (req, res) => {
     })
 }
 
+const createEvento = (request, response) => {
+    const eventos = request.body;
+    let insertQuery = `insert into eventos(evento_titulo, evento_descricao, evento_data, evento_image, evento_local)
+                    values ('${eventos.titulo}', '${eventos.descricao}', '${eventos.data}', '${eventos.image}', '${eventos.local}')`
+    client.query(insertQuery, (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
 module.exports = {
     getEventos,
     getEventoById,
+    createEvento,
 }
