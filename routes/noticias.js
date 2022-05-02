@@ -52,10 +52,10 @@ const deleteNoticia = (request, response) => {
 const updateNoticia = (request, response) => {
     let noticias = request.body;
     console.log(noticias);
-    let updateQuery = `UPDATE noticias SET noticia_titulo = '${noticias.name}',                                  
-                                      noticia_descricao = '${noticias.email}',
-                                      noticia_data = '${noticias.password}',
-                                      noticia_image = '${noticias.role_id}'
+    let updateQuery = `UPDATE noticias SET noticia_titulo = '${noticias.titulo}',                                  
+                                      noticia_descricao = '${noticias.descricao}',
+                                      noticia_data = '${noticias.data}',
+                                      noticia_image = '${noticias.image}'
                                       WHERE noticia_id = ${noticias.id} `
     client.query(updateQuery, (error, results) => {
         if (error) {
