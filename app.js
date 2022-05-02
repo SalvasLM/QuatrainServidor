@@ -41,8 +41,8 @@ app.post('/api/eventos', eventos.createEvento);
 app.post('/api/noticias', noticias.createNoticia);
 
 app.delete('/api/users/:id(\\d+)', users.deleteUser);
-app.delete('/api/users/:id(\\d+)', eventos.deleteEvento);
-app.delete('/api/users/:id(\\d+)', noticias.deleteNoticia);
+app.delete('/api/eventos/:id(\\d+)', eventos.deleteEvento);
+app.delete('/api/noticias/:id(\\d+)', noticias.deleteNoticia);
 
 app.put('/api/users/:id(\\d+)', users.updateUser);
 

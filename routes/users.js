@@ -51,6 +51,7 @@ const deleteUser = (request, response) => {
 
 const updateUser = (request, response) => {
   let users = request.body;
+  console.log(users);
   let updateQuery = `UPDATE users SET user_name = '${users.name}',
                                       user_email = '${users.email}',
                                       user_password = '${users.password}',
@@ -62,7 +63,6 @@ const updateUser = (request, response) => {
       throw error
     }
     response.status(200).json(results.rows)
-    client.end
   })
 
 }
