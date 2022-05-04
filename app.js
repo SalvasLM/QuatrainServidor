@@ -48,6 +48,8 @@ app.put('/api/users', users.updateUser);
 app.put('/api/eventos', eventos.updateEvento);
 app.put('/api/noticias', noticias.updateNoticia);
 
+app.get('/api/login', users.getUserLogin);
+
 
 
 

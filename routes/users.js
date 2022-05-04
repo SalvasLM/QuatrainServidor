@@ -67,6 +67,18 @@ const updateUser = (request, response) => {
 
 }
 
+const getUserLogin = (request, response) => {
+  let email = parseInt(request.params.email)
+  let password = parseInt(request.params.password)
+
+  client.query('SELECT * FROM users WHERE user_email = $1 AND user_password = $2', [email], [password], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 
 module.exports = {
   getUsers,
@@ -74,4 +86,5 @@ module.exports = {
   createUser,
   deleteUser,
   updateUser,
+  getUserLogin,
 }
