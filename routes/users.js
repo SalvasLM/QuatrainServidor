@@ -66,7 +66,7 @@ const updateUser = (request, response) => {
   })
 
 }
-
+/*/
 const getUserLogin = (request, response) => {
   client.query('SELECT * FROM users WHERE user_email = "' + request.body.email + '" AND password = "' + request.body.password + '"', (error, results) => {
     if (error) {
