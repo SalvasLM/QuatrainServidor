@@ -8,7 +8,7 @@ client.connect();
 
 
 const getEventos = (request, response) => {
-    client.query('select * from eventos', (error, results) => {
+    client.query('select eventos.*, st_X(evento_local) lat, st_Y(evento_local) long from eventos', (error, results) => {
         if (error) {
             throw error
         }
