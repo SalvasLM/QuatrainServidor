@@ -6,7 +6,7 @@ const app = express();
 
 client.connect();
 
-
+//xs
 const getUsers = (request, response) => {
   client.query('select * from users', (error, results) => {
     if (error) {
