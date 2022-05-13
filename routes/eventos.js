@@ -6,7 +6,7 @@ const app = express();
 
 client.connect();
 
-
+//cm
 const getEventos = (request, response) => {
     client.query('select eventos.*, st_X(evento_local) lat, st_Y(evento_local) long from eventos', (error, results) => {
         if (error) {
