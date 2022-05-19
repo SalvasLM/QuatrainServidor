@@ -68,12 +68,11 @@ const updateUser = (request, response) => {
 }
 
 const getUserLogin = (request, response) => {
-  var email = request.params.email
-  var password = request.params.password
+  let users = request.body
   client.query(`SELECT *
                 FROM users
-                WHERE user_email = '${email}'
-                  AND user_password = '${password}'`, (error, results) => {
+                WHERE user_email = '${users.email}'
+                  AND user_password = '${users.password}'`, (error, results) => {
     if (error) {
       throw error
     }
