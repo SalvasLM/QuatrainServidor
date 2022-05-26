@@ -8,7 +8,7 @@ client.connect();
 
 
 const getNoticias = (request, response) => {
-    client.query('select * from noticias ORDER BY noticia_id DESC', (error, results) => {
+    client.query('select * from noticias ORDER BY noticia_id ASC', (error, results) => {
         if (error) {
             throw error
         }
