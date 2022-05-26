@@ -8,7 +8,7 @@ client.connect();
 
 //
 const getUsers = (request, response) => {
-  client.query('select * from users', (error, results) => {
+  client.query('select * from users ORDER BY user_id ASC', (error, results) => {
     if (error) {
       throw error
     }
