@@ -52,11 +52,8 @@ const deleteUser = (request, response) => {
 const updateUser = (request, response) => {
   let users = request.body;
   console.log(users);
-  let updateQuery = `UPDATE users SET user_name = '${users.name}',                                  
-                                      user_email = '${users.email}',
-                                      user_password = '${users.password}',
-                                      user_role_id = '${users.role_id}',
-                                      user_image = '${users.image}'
+  let updateQuery = `UPDATE users SET user_email = '${users.email}',
+                                      user_password = '${users.password}'
                                       WHERE user_id = ${users.id} `
   client.query(updateQuery, (error, results) => {
     if (error) {
